@@ -43,7 +43,8 @@ class App extends Component {
                 <header className="App-header">
                     <h1>Google Book Search</h1>
                 </header>
-                <SearchBar />
+                <SearchBar 
+                  handleSubmit= {this.handleSubmit} />
                 {this.state.books.map(book => (<Book key={book.id} link={book.link} title={book.title} img={book.img} description={book.description} price={book.price} authors={book.authors} />))}
                 <button onClick={this.handleSubmit}>Yeah baby</button>
             </div>

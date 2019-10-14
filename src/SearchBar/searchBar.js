@@ -11,8 +11,8 @@ class SearchBar extends Component {
           <FontAwesomeIcon icon={faSearch} />
           <input 
             placeholder="Search term" 
-            value={this.props.searchTerm}
-            onChange={e => this.props.handleUpdate(e.target.value)} />
+            value={this.props.searchTerm} />
+          <button onClick={e => this.props.handleSubmit(e.target.value)}>Yeah baby</button>
         </div>
       </div>
     );
