@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 class Book extends Component {
     render() {
         return (
-            <div>
+            <div onClick={()=> window.open(this.props.link)}>
                 <div>
                     <img src={this.props.img}/>>
                 </div>
