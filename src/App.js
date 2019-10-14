@@ -24,10 +24,13 @@ class App extends Component {
         }).then(data => data.items.forEach(book => {
             tempBooks.push({
                 title: book.volumeInfo.title,
+                id: book.id,
+                eBook: book.saleInfo.isEbook,
                 img: (book.volumeInfo.imageLinks.thumbnail),
                 description: book.volumeInfo.description,
                 authors: book.volumeInfo.authors,
-                price: (book.saleInfo.saleability === 'FOR_SALE') ? book.saleInfo.listPrice.amount : 'Not for Sale'
+                price: (book.saleInfo.saleability === 'FOR_SALE') ? book.saleInfo.listPrice.amount : 'Not for Sale',
+                link: book.volumeInfo.previewLink
             });
         })).then(()=>this.setState({books: tempBooks}));
 
@@ -39,7 +42,7 @@ class App extends Component {
                 <header className="App-header">
                     <h1>Google Book Search</h1>
                 </header>
-                {this.state.books.map(book => (<Book title={book.title} img={book.img} description={book.description} price={book.price} authors={book.authors} />))}
+                {this.state.books.map(book => (<Book key={book.id} link={book.link} title={book.title} img={book.img} description={book.description} price={book.price} authors={book.authors} />))}
                 <button onClick={this.handleSubmit}>Yeah baby</button>
             </div>
         );
