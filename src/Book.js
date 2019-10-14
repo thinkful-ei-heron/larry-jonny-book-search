@@ -9,8 +9,8 @@ class Book extends Component {
                 </div>
                 <div>
                     <h2>{this.props.title}</h2>
-                    <div>Author: {this.props.author}</div>
-                    <div>Price: {this.props.amount}</div>
+                    <div>Author: {this.props.authors}</div>
+                    <div>Price: {this.props.price}</div>
                     <p>{this.props.description}</p>
                 </div>
             </div>)
