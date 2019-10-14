@@ -14,8 +14,13 @@ class App extends Component {
         }
     }
 
+    handleSearch = (e) => {
+        this.setState({search:  e.target.value});
+    };
+
     handleSubmit = () => {
         let tempBooks = [];
+
 
         fetch(`https://www.googleapis.com/books/v1/volumes?q=${this.state.search}`).then(res => {
             if (!res.ok) {
@@ -43,10 +48,9 @@ class App extends Component {
                 <header className="App-header">
                     <h1>Google Book Search</h1>
                 </header>
-                <SearchBar 
-                  handleSubmit= {this.handleSubmit} />
-                {this.state.books.map(book => (<Book key={book.id} link={book.link} title={book.title} img={book.img} description={book.description} price={book.price} authors={book.authors} />))}
-                <button onClick={this.handleSubmit}>Yeah baby</button>
+                <SearchBar searchTerm={this.state.search} handleSearch= {this.handleSearch} handleSubmit={this.handleSubmit} />
+                {this.state.books.map(book =>
+                    (<Book key={book.id} link={book.link} title={book.title} img={book.img} description={book.description} price={book.price} authors={book.authors} />))}
             </div>
         );
     }
