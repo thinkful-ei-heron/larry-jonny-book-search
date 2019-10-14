@@ -6,8 +6,8 @@ class SearchBar extends Component {
     return (
       <div className="SearchBar">
         <div className="SearchBar__controls">
-          <input 
-            placeholder="Search term" 
+          <input
+            placeholder="Search term"
             value={this.props.searchTerm}
             onChange={this.props.handleSearch}/>
           <button onClick={this.props.handleSubmit}>Search</button>

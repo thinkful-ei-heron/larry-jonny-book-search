@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
+import './FilterBar.css'
 
 class FilterBar extends Component {
     render() {
         return (
-            <div>
+            <div class="FilterBar">
                 Print Type: <select name="printType" onChange={this.props.handlePrintType}>
                     <option value="all" selected>all</option>
                     <option value="books">books</option>

@@ -13,7 +13,7 @@ class App extends Component {
             books: [],
             search: 'henry',
             bookType: 'No Filter',
-            printType: ''
+            printType: 'all'
         }
     }
 

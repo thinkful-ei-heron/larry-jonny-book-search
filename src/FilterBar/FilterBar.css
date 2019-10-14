@@ -1,0 +1,19 @@
+.FilterBar {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  background-color: #DDDDDD;
+  font-size: 16px;
+  padding: 12px 0;
+  height: 40px;
+}
+
+select {
+  height: 20px;
+  margin: 0 8px;
+  border: solid;
+  border-color: gray;
+  border-width: 1px;
+  font-size: 14px;
+}
